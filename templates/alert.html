@@ -1,0 +1,14 @@
+{% if messages %} 
+
+{% for message in messages %}
+<div id="message" class="container">  
+    <div{% if message.tags %} class="alert alert-{{ message.tags }} bg-{{message.tags}} d-flex justify-content-between align-items-center"{% endif %} role="alert">
+        
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Error: {% endif %}
+        {{ message }}
+            <i class="ri-close-line close" data-dismiss="alert" style="cursor: pointer;"></i>
+    </div>
+</div>
+{% endfor %} 
+
+{% endif %}

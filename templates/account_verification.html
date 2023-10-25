@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Account</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #e1e1e1;
+            border-radius: 5px;
+            margin-top: 50px;
+        }
+        h2 {
+            color: #333;
+        }
+        p {
+            margin: 10px 0;
+        }
+        .verification-link {
+            background-color: #007BFF;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Account Verification</h2>
+        <p>Hi {{user.first_name}}, <br/>
+            Thank you for signing up with our service. To verify your account, click the link below:</p>
+        <p>http://{{domain}}{% url 'activate' uidb64=uid token=token %}</p>
+        <p>If you did not create this account, you can safely ignore this email.</p>
+        <p>Thank you for choosing our service!</p>
+    </div>
+</body>
+</html>
+

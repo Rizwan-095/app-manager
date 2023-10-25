@@ -1,0 +1,189 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "app_manager",
+    "dateExported": "2023-10-25T10:53:07.796Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "ceec8ff1-60a9-4daf-a1a9-985789a48428",
+            "colId": "7e947cfd-5238-4fa9-99bd-f53caa00d4a2",
+            "containerId": "",
+            "name": "register",
+            "url": "{{django}}/account/register/",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-10-23T18:49:46.818Z",
+            "modified": "2023-10-24T07:37:43.060Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"first_name\": \"Hamza\",\n  \"last_name\": \"Khalid\",\n  \"email\": \"ahsanumair1144@gmail.com\",\n  \"password\": \"Secret123@\",\n  \"confirm_password\": \"Secret123@\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "a30a6b3d-8d6a-435a-9edf-ba4ed10658e1",
+            "colId": "7e947cfd-5238-4fa9-99bd-f53caa00d4a2",
+            "containerId": "",
+            "name": "forgot password",
+            "url": "{{django}}/account/forgot-password/",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-10-24T07:38:34.062Z",
+            "modified": "2023-10-24T07:43:04.754Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"ahsanumair1144@gmail.com\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "5b5d9a98-1f01-4974-b692-026839e35e74",
+            "colId": "7e947cfd-5238-4fa9-99bd-f53caa00d4a2",
+            "containerId": "",
+            "name": "login",
+            "url": "{{django}}/account/login/",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-10-24T08:08:33.591Z",
+            "modified": "2023-10-25T11:54:39.755Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"ahsanumair1144@gmail.com\",\n  \"password\": \"Secret123@\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "c0358b8a-cc70-4bd6-be17-ce0df078ddfc",
+            "colId": "7e947cfd-5238-4fa9-99bd-f53caa00d4a2",
+            "containerId": "",
+            "name": "create app",
+            "url": "{{django}}/app/create-app/",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2023-10-24T09:10:38.064Z",
+            "modified": "2023-10-25T12:39:50.707Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"messenger\",\n  \"description\": \"This is my messenger.\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk4MzIzOTM3LCJpYXQiOjE2OTgyMzc1MzcsImp0aSI6IjhlZGFhOTIwMTJkMDQ4ZWViMGU1YzdjYTZlZDFiYzU4IiwidXNlcl9pZCI6Mn0.wznS-JeTaOo0rH8d869xHfiQHtIrYCC5XNVJSWXM1bg"
+            },
+            "tests": []
+        },
+        {
+            "_id": "ae429fea-e97f-4f11-943e-188e54b3d82c",
+            "colId": "7e947cfd-5238-4fa9-99bd-f53caa00d4a2",
+            "containerId": "",
+            "name": "get all apps",
+            "url": "{{django}}/app/get-all-apps/",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2023-10-24T09:24:48.258Z",
+            "modified": "2023-10-25T12:39:17.461Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk4MzIzOTM3LCJpYXQiOjE2OTgyMzc1MzcsImp0aSI6IjhlZGFhOTIwMTJkMDQ4ZWViMGU1YzdjYTZlZDFiYzU4IiwidXNlcl9pZCI6Mn0.wznS-JeTaOo0rH8d869xHfiQHtIrYCC5XNVJSWXM1bg"
+            },
+            "tests": []
+        },
+        {
+            "_id": "81d347be-4dc4-490b-8de8-1566e1f54a8a",
+            "colId": "7e947cfd-5238-4fa9-99bd-f53caa00d4a2",
+            "containerId": "",
+            "name": "get single app",
+            "url": "{{django}}/app/get-single-app/1",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2023-10-24T11:12:24.694Z",
+            "modified": "2023-10-25T11:54:30.637Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk4MzIxMjU5LCJpYXQiOjE2OTgyMzQ4NTksImp0aSI6IjkzZmM4MDYzNWYxYTRjNzM4MGQ5MTg1YmQ1MWMyMWZmIiwidXNlcl9pZCI6MX0.2dmcyk-6zWyUwA07G3hH0JfLzfZCQz3e5mTlCOCUmy4"
+            },
+            "tests": []
+        },
+        {
+            "_id": "f2a60d90-9720-4e54-8b00-f4c48173740c",
+            "colId": "7e947cfd-5238-4fa9-99bd-f53caa00d4a2",
+            "containerId": "",
+            "name": "delete app",
+            "url": "{{django}}/app/delete-app/2",
+            "method": "DELETE",
+            "sortNum": 70000,
+            "created": "2023-10-24T11:15:59.788Z",
+            "modified": "2023-10-24T11:16:25.183Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk4MjMxMzcwLCJpYXQiOjE2OTgxNDQ5NzAsImp0aSI6IjNkNjUyOTM3OTkxMTQwZDdiMTA3YTVmMjEyNzkwODUwIiwidXNlcl9pZCI6Mn0.LM-aT8WCDFpTpVBegKt37WLS7iFRogGigEW3XmgDgxo"
+            },
+            "tests": []
+        },
+        {
+            "_id": "d7574b37-d521-4d97-9afc-2ab5c11e8674",
+            "colId": "7e947cfd-5238-4fa9-99bd-f53caa00d4a2",
+            "containerId": "",
+            "name": "update app",
+            "url": "{{django}}/app/update-app/1/",
+            "method": "PUT",
+            "sortNum": 80000,
+            "created": "2023-10-24T11:25:15.128Z",
+            "modified": "2023-10-24T11:28:59.200Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"my-app3\",\n  \"description\": \"This is my app3.\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk4MjMxMzcwLCJpYXQiOjE2OTgxNDQ5NzAsImp0aSI6IjNkNjUyOTM3OTkxMTQwZDdiMTA3YTVmMjEyNzkwODUwIiwidXNlcl9pZCI6Mn0.LM-aT8WCDFpTpVBegKt37WLS7iFRogGigEW3XmgDgxo"
+            },
+            "tests": []
+        },
+        {
+            "_id": "2c048f44-6f04-4021-adea-e6d3a4449d7b",
+            "colId": "7e947cfd-5238-4fa9-99bd-f53caa00d4a2",
+            "containerId": "",
+            "name": "upgrade plan",
+            "url": "{{django}}/app/upgrade-plan/5/",
+            "method": "PUT",
+            "sortNum": 90000,
+            "created": "2023-10-25T12:28:52.128Z",
+            "modified": "2023-10-25T12:59:54.432Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"plan\": \"standard\",\n  \"price\": 10\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk4MzIzOTM3LCJpYXQiOjE2OTgyMzc1MzcsImp0aSI6IjhlZGFhOTIwMTJkMDQ4ZWViMGU1YzdjYTZlZDFiYzU4IiwidXNlcl9pZCI6Mn0.wznS-JeTaOo0rH8d869xHfiQHtIrYCC5XNVJSWXM1bg"
+            },
+            "tests": []
+        }
+    ]
+}
