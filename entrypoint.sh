@@ -23,7 +23,6 @@ python manage.py collectstatic --noinput
 # Fix permissions so Nginx can read the static and media files.
 echo "Fixing file permissions for Nginx..."
 chmod -R 755 /home/app/web/staticfiles
-chmod -R 755 /home/app/web/mediafiles
 
 echo "Creating super user"
 python manage.py createsuperuser --noinput || true
