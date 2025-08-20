@@ -3,8 +3,8 @@ version: '3.8'
 services:
   web:
     # Use the image built and pushed by the Jenkins pipeline
-    image: rizwan005/app-manager-web:latest
-    container_name: app-manager-web-1
+    image: rizwan005/django_app-web:latest
+    container_name: django_app-web-1
     # Command to run Gunicorn to serve the Django application
     command: gunicorn --bind 0.0.0.0:8000 backend.wsgi
     volumes:
@@ -22,8 +22,8 @@ services:
 
   nginx:
     # Use the Nginx image built and pushed by the pipeline
-    image: rizwan005/app-manager-nginx:latest
-    container_name: app-manager-nginx-1
+    image: rizwan005/django_app-nginx:latest
+    container_name: django_app-nginx-1
     volumes:
       # Nginx needs to read the static and media files from the volumes
       - static_volume:/home/app/web/staticfiles
@@ -39,7 +39,7 @@ services:
   db:
     # Use the official PostgreSQL image
     image: postgres:15-alpine
-    container_name: app-manager-db-1
+    container_name: django_app-db-1
     restart: always
     volumes:
       # Persist the database data to a local volume
@@ -56,9 +56,7 @@ services:
 volumes:
   postgres_data:
   static_volume:
-
 # Define the network for inter-container communication
 networks:
   django_network:
     driver: bridge
-
