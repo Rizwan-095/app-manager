@@ -5,7 +5,7 @@ FROM nginx:1.25-alpine
 RUN rm /etc/nginx/conf.d/default.conf
 
 # Copy your custom configuration file into the container
-COPY ./django_app.conf /etc/nginx/conf.d/django_app.conf
+COPY ./nginx.conf /etc/nginx/conf.d/nginx.conf
 
 # Expose port 80 to the host (already handled by docker-compose)
 EXPOSE 80
