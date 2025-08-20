@@ -20,6 +20,8 @@ python manage.py migrate --noinput
 echo "Collecting static files..."
 python manage.py collectstatic --noinput
 
+echo "Creating super admin user"
+python manage.py createsuperuser
 # Fix permissions so Nginx can read the static and media files.
 echo "Fixing file permissions for Nginx..."
 chmod -R 755 /home/app/web/staticfiles
