@@ -12,6 +12,7 @@ WORKDIR /home/app/web
 # Install the 'netcat-openbsd' package to provide the 'nc' command
 RUN apt-get update && apt-get install -y --no-install-recommends \
   netcat-openbsd \
+  libpq-dev \
   && rm -rf /var/lib/apt/lists/*
 
 # Install Python dependencies from requirements.txt
