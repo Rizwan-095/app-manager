@@ -18,18 +18,18 @@ SECRET_KEY = env('SECRET_KEY')
 DEBUG = True if env("MODE") == "development" else False
 
 # allow origins
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost','192.168.18.81']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost','192.168.18.87']
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:8000',
     'http://127.0.0.1:8000',
-    'http://192.168.18.81'
+    'http://192.168.18.87'
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     'http://localhost:8000',
     'http://127.0.0.1:8000',
-    'http://192.168.18.81'
+    'http://192.168.18.87'
 ]
 
 # Application definition
