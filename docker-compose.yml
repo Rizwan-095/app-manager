@@ -1,29 +1,67 @@
-version: '3'
+version: '3.8'
 
 services:
-  db:
-    image: postgres:latest 
-    environment:
-      POSTGRES_DB: app_manager
-      POSTGRES_USER: your_username
-      POSTGRES_PASSWORD: your_password
-
   web:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    # Use the image built and pushed by the Jenkins pipeline
+    image: rizwan005/app-manager-web:latest
+    container_name: app-manager-web-1
+    # Command to run Gunicorn to serve the Django application
+    command: gunicorn --bind 0.0.0.0:8000 backend.wsgi
+    volumes:
+      # Mount the static and media volumes so the web container can write to them
+      - static_volume:/home/app/web/staticfiles
+      - media_volume:/home/app/web/mediafiles
     expose:
       - 8000
-    environment:
-      - DJANGO_SUPERUSER_USERNAME=your_username
-      - DJANGO_SUPERUSER_EMAIL=your_email@gmail.com
-      - DJANGO_SUPERUSER_PASSWORD=your_password
+    env_file:
+      - .env.prod
+    depends_on:
+      # The web service depends on the database to start
+      - db
+    networks:
+      - django_network
 
   nginx:
-    image: nginx:latest
+    # Use the Nginx image built and pushed by the pipeline
+    image: rizwan005/app-manager-nginx:latest
+    container_name: app-manager-nginx-1
     volumes:
-      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      # Nginx needs to read the static and media files from the volumes
+      - static_volume:/home/app/web/staticfiles
+      - media_volume:/home/app/web/mediafiles
     ports:
-      - 80:80
+      - "80:80"
+      - "443:443"
     depends_on:
+      # Nginx must wait for the web service to be available
       - web
+    networks:
+      - django_network
+
+  db:
+    # Use the official PostgreSQL image
+    image: postgres:15-alpine
+    container_name: app-manager-db-1
+    restart: always
+    volumes:
+      # Persist the database data to a local volume
+      - postgres_data:/var/lib/postgresql/data/
+    env_file:
+      # Load database credentials from the .env.prod file
+      - .env.prod
+    expose:
+      - 5432
+    networks:
+      - django_network
+
+# Define the volumes for persistent storage
+volumes:
+  postgres_data:
+  static_volume:
+  media_volume:
+
+# Define the network for inter-container communication
+networks:
+  django_network:
+    driver: bridge
+
